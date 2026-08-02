@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress
+
+spec:
+  containers:
+    - image: polinux/stress
+      imagePullPolicy: always
+      name: stress
+      
