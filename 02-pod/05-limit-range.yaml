@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limits
+spec:
+  limits:
+    - default:
+        cpu: 500m
+        memory: 512Mi
+      defaultRequest:
+        cpu: 250m
+        memory: 256Mi 
+      max:
+        cpu: 1
+        memory: 500Mi
+      min:
+        cpu: 100m
+        memory: 128Mi
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress
+spec:
+  containers:
+    - image: polinux/stress
+      imagePullPolicy: always
+      name: stress
+      command: ["sh", "-c", "echo Hello Kubernetes! && sleep 3600"]
+        
