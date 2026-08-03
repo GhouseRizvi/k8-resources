@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: pod
+namespace:
+ - name: nginx
+   image: nginx:latest
+   ports:
+   - containerPort: 80
+ - name: almalinux
+   image: almalinux:latest
+   
+  
