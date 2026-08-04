@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: my-container
-      image: my-image:latest
+      image: nginx:latest
       env:
       - name: API_KEY
         valueFrom:
