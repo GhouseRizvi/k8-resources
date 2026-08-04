@@ -1,0 +1,14 @@
+--- # by using --- you can define multiple resources in a single YAML file
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multiple
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: busybox-container
+      image: busybox:latest
+      command: ["sleep", "3600"]
