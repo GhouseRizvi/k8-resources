@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+  # Configuration values
+  api-key: "your-api-key"
+  database-url: "your-database-url"
+  log-level: "info"
+  max-connections: "100"
+  timeout: "30s"
+  feature-flag: "enabled"
+  service-port: "8080"
+  cache-enabled: "true"
+  retry-count: "3"
+  maintenance-mode: "false"
