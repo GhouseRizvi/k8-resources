@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: config-pod
+spec:
+  containers:
+    - name: my-container
+      image: my-image:latest
+      env:
+      - name: API_KEY
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: api-key
+            
+      - name: DATABASE_URL
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: database-url
+      - name: LOG_LEVEL
+        valueFrom:      
+          configMapKeyRef:
+            name: my-config
+            key: log-level
+      - name: MAX_CONNECTIONS
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: max-connections 
+      - name: TIMEOUT
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: timeout
+      - name: FEATURE_FLAG  
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: feature-flag 
+      - name: SERVICE_PORT
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: service-port 
+      - name: CACHE_ENABLED
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: cache-enabled
+      - name: RETRY_COUNT
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: retry-count
+      - name: MAINTENANCE_MODE
+        valueFrom:
+          configMapKeyRef:
+            name: my-config
+            key: maintenance-mode
+        
