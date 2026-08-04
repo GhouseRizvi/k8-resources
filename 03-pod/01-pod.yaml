@@ -5,6 +5,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:iii
+      #image: nginx:iii this will cause the pod to fail because the image does not exist imagepullbackoff error
+      image: nginx:latest
       ports:
         - containerPort: 80
