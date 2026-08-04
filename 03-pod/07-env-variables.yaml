@@ -4,8 +4,8 @@ metadata:
   name: env
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:latest
+    - name: nginx
+      image: nginx
       ports:
         - containerPort: 80
       env:
