@@ -4,7 +4,7 @@ kind: Pod
 metadata:
   name: nginx-pod
   labels:
-    app: nginx
+    server: nginx
 spec:
   containers:
   - name: nginx
@@ -19,7 +19,7 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    app: nginx
+    server: nginx
   ports:
     - protocol: TCP
       port: 80
@@ -36,5 +36,4 @@ spec:
   containers:
   - name: almalinux
     image: almalinux:latest
-    ports:
-    - containerPort: 80
+    command: ["sleep", "3600"]
